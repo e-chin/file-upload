@@ -1,0 +1,267 @@
+{
+	"info": {
+		"_postman_id": "0abfef81-ff2e-4268-a0d3-0ecccc298a38",
+		"name": "file-upload",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST /files",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"filePath\" : \"C:\\\\Users\\\\eujun\\\\Desktop\\\\test.txt\",\n\t\"fileName\" : \"test.txt\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/files",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"files"
+					]
+				},
+				"description": "POST with valid input"
+			},
+			"response": [
+				{
+					"id": "7634f5b5-d594-4071-ab7b-80db416bd594",
+					"name": "POST /files",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"filePath\" : \"C:\\\\Users\\\\eujun\\\\Desktop\\\\test.txt\",\n\t\"fileName\" : \"test.txt\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/files",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"files"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "18",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 Apr 2018 23:48:27 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						}
+					],
+					"cookie": [],
+					"body": "Upload successful."
+				}
+			]
+		},
+		{
+			"name": "POST /files (invalid input)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/files",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"files"
+					]
+				},
+				"description": "POST with invalid input"
+			},
+			"response": [
+				{
+					"id": "11f4d79a-39e4-44a8-8309-67eeb0cdac4a",
+					"name": "POST /files (invalid input)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/files",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"files"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "51",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 Apr 2018 23:48:34 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						}
+					],
+					"cookie": [],
+					"body": "Upload failed. File name or file path not provided."
+				}
+			]
+		},
+		{
+			"name": "POST /files (invalid file path)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"filePath\" : \"C:\\\\Users\\\\eujun\\\\Desktop\\\\test2.txt\",\n\t\"fileName\" : \"test.txt\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/files",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"files"
+					]
+				},
+				"description": "POST with invalid file path"
+			},
+			"response": [
+				{
+					"id": "830333f9-dbeb-42a4-a78e-6c2cc33fd241",
+					"name": "POST /files (invalid file path)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"filePath\" : \"C:\\\\Users\\\\eujun\\\\Desktop\\\\test2.txt\",\n\t\"fileName\" : \"test.txt\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/files",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"files"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "close",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "51",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 Apr 2018 23:45:19 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						}
+					],
+					"cookie": [],
+					"body": "Upload failed. File name or file path not provided."
+				}
+			]
+		}
+	]
+}
